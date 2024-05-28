@@ -463,6 +463,9 @@ function OrionLib:Init()
 end	
 
 function OrionLib:MakeWindow(WindowConfig)
+	--// as the name sais this will fix the loading of large scripts
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/nerdifly/personalscripts/main/orion-loadfix.lua')))()
+	
 	local FirstTab = true
 	local Minimized = false
 	local Loaded = false
@@ -1756,9 +1759,6 @@ function OrionLib:MakeWindow(WindowConfig)
 	
 	return TabFunction
 end
-
---// as the name sais this will fix the loading of large scripts
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/nerdifly/personalscripts/main/orion-loadfix.lua')))()
 
 function OrionLib:Destroy()
 	Orion:Destroy()
